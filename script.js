@@ -1,7 +1,7 @@
 const now = moment();
-var timeSlot = $('#hour');
-var rowDiv = $('#row');
-var containerDiv = $('#container');
+var timeSlot = $('.hour');
+var rowDiv = $('.row');
+var containerDiv = $('.container');
 
 let day = [
     {
@@ -75,22 +75,22 @@ $("#currentDay").text(now.format("dddd MMMM Do YYYY"))
 for (var i = 0; i < day.length; i++) {
 
     // This creates a new div for each row needed.
-    var addRow = $("<div>" + day[i] + "</div>");
-
+    var addRow = $("<div>" + day[i].hour + " " + day[i].abbrieviation + "</div>");
+    
     // It then adds this new row div.
-    addRow.append(containerDiv);
+    containerDiv.append(addRow);
 }
 
 
  // For Loop then loops through our day array...
- for (var i = 0; i < day.length; i++) {
+//  for (var i = 0; i < day.length; i++) {
 
-    // It then creates a new div for each drink. Note we create divs and add the content in the same line.
-    var newTimeDiv = $("<div>" + day[i] + "</div>");
+//     // It then creates a new div for each drink. Note we create divs and add the content in the same line.
+//     var newTimeDiv = $("<div>" + day[i] + "</div>");
 
-    // It then adds this new div to the drinkList div.
-    timeSlot.append(newTimeDiv);
- }
+//     // It then adds this new div to the drinkList div.
+//     containerDiv.append(newTimeDiv);
+//  }
 
 // Add each hour to a row- Use a for loop to cycle through the hours and append them to the DOM.
 // Add a section for the user to place a reminder in each row

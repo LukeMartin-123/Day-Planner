@@ -10,7 +10,7 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  
+
   <title>Work Day Scheduler</title>
 </head>
 
@@ -29,22 +29,36 @@
 
   <div class="container">
     <!-- Timeblocks go here // These are worth hardcoding in HTML, look at style.css for help-->
-    
-    <div class="time-block"> </div>
-    <div class="description"> </div>
-    <div class="row"> </div>
-    <div class=="hour"> </div>
-    <div class=="saveBtn"> </div>
 
+
+    <div class="row">
+      <div class=="hour">
+        <p>9:00 AM</p>
+      </div>
+
+      <div class="description">
+        <p>Show up to work</p>
+      </div>
+
+    </div>
+
+
+    <div class=="saveBtn">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </div>
   </div>
-
+  </div>
+  
+  <div class="time-block">
+    <p>Time Block Test</p>
+  </div>
 
   <div class=="past"> </div>
   <div class=="present"> </div>
   <div class=="future"> </div>
 
 
-<!-- // THEN each time block is color-coded to indicate whether it is in the past, present, or future
+  <!-- // THEN each time block is color-coded to indicate whether it is in the past, present, or future
 	// we need a reference to the current time to compare against the time blocks
 	// what jQuery methods do we have at our disposal to add and remove styles from our elements    
 	// based on the time? -->
