@@ -5,7 +5,7 @@ var containerDiv = $('.container');
 var past = $('.past');
 var present = $('.present');
 var future = $('future');
-var inputArea = $('textarea');
+
 
 let day = [
     {
@@ -93,6 +93,31 @@ for (var i = 0; i < day.length; i++) {
     // It then adds this new row div.
     containerDiv.append(addRow);
 }
+
+const inputArea = $('textarea');
+let reminderArray = [];
+
+
+// Add Event Listener to Save Button
+// When the event runs, you grab the content from the textarea and save that into localstorage with a unique key that relates to the time block
+document.getElementsByClassName('btn').addeventListener("click", localStorage.setItem("reminderArray", JSON.stringify))
+       
+
+// When the page loads, you would need to look through the localstorage content for anything stored
+ inputArea.innerHTML = localStorage.getItem("reminderArray")
+
+}
+
+// And if there is something stored, you would set the the value of the textarea equal to what’s in localstorage
+function showData() {
+    var reminder = JSON.parse(localStorage.getItem('inputArray'))
+        if (
+            // reminder contains data
+        )
+
+        }
+
+
 
 
 var timeSlot = $('.hour');
