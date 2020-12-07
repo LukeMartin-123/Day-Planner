@@ -73,28 +73,26 @@ $("#currentDay").text(now.format("dddd MMMM Do YYYY"))
 
 
 for (var i = 0; i < day.length; i++) {
-
+    
     // This creates a new div for each row needed.
-    var addRow = $("<div>" + day[i].hour + " " + day[i].abbrieviation + "</div>");
+    var addRow = $(`
+    <div id="hour-${day[i].value}" class="row time-block">
+      <div class="col-md-1 hour">
+        ${day[i].hour} ${day[i].abbrieviation} 
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+    </div>
+    `);
     
     // It then adds this new row div.
     containerDiv.append(addRow);
 }
 
 
- // For Loop then loops through our day array...
-//  for (var i = 0; i < day.length; i++) {
 
-//     // It then creates a new div for each drink. Note we create divs and add the content in the same line.
-//     var newTimeDiv = $("<div>" + day[i] + "</div>");
 
-//     // It then adds this new div to the drinkList div.
-//     containerDiv.append(newTimeDiv);
-//  }
-
-// Add each hour to a row- Use a for loop to cycle through the hours and append them to the DOM.
-// Add a section for the user to place a reminder in each row
-// Add a save button to each row
 
 // Eventually add functionality that shows if the time slot is in the past, present, or future
 // Add local storage elements that will save the inputs
