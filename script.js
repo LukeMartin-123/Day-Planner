@@ -77,7 +77,7 @@ $("#currentDay").text(now.format("dddd MMMM Do YYYY"))
 
 
 for (var i = 0; i < day.length; i++) {
-    
+
     // This creates a new div for each row needed.
     var addRow = $(`
     <div id="hour-${day[i].value}" class="row time-block">
@@ -89,7 +89,7 @@ for (var i = 0; i < day.length; i++) {
       <button class="btn saveBtn col-md-1"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
     </div>
     `);
-    
+
     // It then adds this new row div.
     containerDiv.append(addRow);
 }
@@ -97,37 +97,31 @@ for (var i = 0; i < day.length; i++) {
 
 var timeSlot = $('.hour');
 
-$( timeSlot ).each(function( index ) {
-    console.log( index + $( this ).text() );
-  });
-  
-
-// $(timeSlot).each(function(index) {
-//  if ($(this).text() === moment().hour);
-//  $("inputArea").addClass("present");
-// })
+// $( timeSlot ).each(function( index ) {
+//     console.log( index + $( this ).text() );
+//   });
 
 
-//     
+$(timeSlot).each(function (index) {
+    var date = new Date;
+    var hour = date.getHours();
+    console.log(hour)
 
-// else if 
-// (each(timeSlot, value) > moments.hours() {
-//     $("inputArea").addClass("future");
-// }
+    if (index + 9 === hour) {
+        $("#hour-" + index).addClass("present");
+    }
 
-// else if 
-// (each(timeSlot, value) < now.format("h:mm A")) {
-//     $("inputArea").addClass("past");
-// }
+    else if
+        (index + 9 > hour) {
+        $("#hour-" + index).addClass("past");
+    }
 
+    else if
+        (index + 9 < hour) {
+        $("#hour-" + index).addClass("future");
+    }
 
-
-
-
-
-// Eventually add functionality that shows if the time slot is in the past, present, or future
-// Add local storage elements that will save the inputs
-
+})
 
 
 
