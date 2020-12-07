@@ -2,6 +2,9 @@ const now = moment();
 var timeSlot = $('.hour');
 var rowDiv = $('.row');
 var containerDiv = $('.container');
+var past = $('.past');
+var present = $('.present');
+var future = $('future');
 
 let day = [
     {
@@ -90,6 +93,24 @@ for (var i = 0; i < day.length; i++) {
     containerDiv.append(addRow);
 }
 
+
+
+// Target the section where we enter text
+// If the hour = moment.js hour set class attribute 'present'
+// If the hour > moment.js hour set class attribute 'past'
+// If the hour < moment.js hour set class attribute 'future
+
+if (timeSlot === moment()) {
+    $('textarea').attr(present);
+}
+
+else if (timeSlot > moment()) {
+    $('textarea').attr(future);
+}
+
+else if (timeSlot < (moment()) {
+    $('textarea').attr(past);
+}
 
 
 
