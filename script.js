@@ -101,16 +101,17 @@ for (var i = 0; i < day.length; i++) {
 // If the hour > moment.js hour set class attribute 'past'
 // If the hour < moment.js hour set class attribute 'future
 
-if (timeSlot === now.format("h:mm A")) {
+
+if (hour.value  === now.format("h:mm A")) {
     $(inputArea).attr(present);
 }
 
-else if (timeSlot > now.format("h:mm A")) {
+else if (hour.value  > now.format("h:mm A")) {
 
     $(inputArea).attr(future);
 }
 
-else if (timeSlot < now.format("h:mm A")) {
+else if (hour.value < now.format("h:mm A")) {
     $(inputArea).attr(past);
 }
 
