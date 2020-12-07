@@ -97,13 +97,21 @@ for (var i = 0; i < day.length; i++) {
 
 var timeSlot = $('.hour');
 
-$.each({timeSlot}, function(index, element) {
- if (timeSlot) === now.format("h:mm A")
-    $("inputArea").addClass("present");
-});
+$( timeSlot ).each(function( index ) {
+    console.log( index + $( this ).text() );
+  });
+  
+
+// $(timeSlot).each(function(index) {
+//  if ($(this).text() === moment().hour);
+//  $("inputArea").addClass("present");
+// })
+
+
+//     
 
 // else if 
-// (each(timeSlot, value) > now.format("h:mm A")) {
+// (each(timeSlot, value) > moments.hours() {
 //     $("inputArea").addClass("future");
 // }
 
