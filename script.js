@@ -5,6 +5,7 @@ var containerDiv = $('.container');
 var past = $('.past');
 var present = $('.present');
 var future = $('future');
+var inputArea = $('textarea');
 
 let day = [
     {
@@ -100,16 +101,17 @@ for (var i = 0; i < day.length; i++) {
 // If the hour > moment.js hour set class attribute 'past'
 // If the hour < moment.js hour set class attribute 'future
 
-if (timeSlot === moment()) {
-    $('textarea').attr(present);
+if (timeSlot === now.format("h:mm A")) {
+    $(inputArea).attr(present);
 }
 
-else if (timeSlot > moment()) {
-    $('textarea').attr(future);
+else if (timeSlot > now.format("h:mm A")) {
+
+    $(inputArea).attr(future);
 }
 
-else if (timeSlot < (moment()) {
-    $('textarea').attr(past);
+else if (timeSlot < now.format("h:mm A")) {
+    $(inputArea).attr(past);
 }
 
 
