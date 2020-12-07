@@ -1,5 +1,5 @@
 const now = moment();
-var timeSlot = $('.hour');
+
 var rowDiv = $('.row');
 var containerDiv = $('.container');
 var past = $('.past');
@@ -102,19 +102,23 @@ for (var i = 0; i < day.length; i++) {
 // If the hour < moment.js hour set class attribute 'future
 
 
-if (hour.value  === now.format("h:mm A")) {
-    $(inputArea).attr(present);
+if 
+(each(timeSlot, value) === now.format("h:mm A")) {
+    $("inputArea").addClass("present");
 }
 
-else if (hour.value  > now.format("h:mm A")) {
-
-    $(inputArea).attr(future);
+else if 
+(each(timeSlot, value) > now.format("h:mm A")) {
+    $("inputArea").addClass("future");
 }
 
-else if (hour.value < now.format("h:mm A")) {
-    $(inputArea).attr(past);
+else if 
+(each(timeSlot, value) < now.format("h:mm A")) {
+    $("inputArea").addClass("past");
 }
 
+
+var timeSlot = $('.hour');
 
 
 
