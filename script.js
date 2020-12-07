@@ -95,30 +95,25 @@ for (var i = 0; i < day.length; i++) {
 }
 
 
-
-// Target the section where we enter text
-// If the hour = moment.js hour set class attribute 'present'
-// If the hour > moment.js hour set class attribute 'past'
-// If the hour < moment.js hour set class attribute 'future
-
-
-if 
-(each(timeSlot, value) === now.format("h:mm A")) {
-    $("inputArea").addClass("present");
-}
-
-else if 
-(each(timeSlot, value) > now.format("h:mm A")) {
-    $("inputArea").addClass("future");
-}
-
-else if 
-(each(timeSlot, value) < now.format("h:mm A")) {
-    $("inputArea").addClass("past");
-}
-
-
 var timeSlot = $('.hour');
+
+$.each({timeSlot}, function(index, element) {
+ if (timeSlot) === now.format("h:mm A")
+    $("inputArea").addClass("present");
+});
+
+// else if 
+// (each(timeSlot, value) > now.format("h:mm A")) {
+//     $("inputArea").addClass("future");
+// }
+
+// else if 
+// (each(timeSlot, value) < now.format("h:mm A")) {
+//     $("inputArea").addClass("past");
+// }
+
+
+
 
 
 
