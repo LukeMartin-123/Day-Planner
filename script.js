@@ -88,7 +88,6 @@ for (var i = 0; i < day.length; i++) {
       </textarea>
       <button class="btn saveBtn col-md-1"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
     </div>
-    
 
     `);
 
@@ -97,9 +96,10 @@ for (var i = 0; i < day.length; i++) {
 }
 
 
+
 function saveReminders() {
     var inputVal = document.getElementById("reminder").value;
-    localStorage.setItem("input", inputVal);
+    localStorage.setItem("hour", inputVal);
 }
 
 function getReminders() {
@@ -114,13 +114,11 @@ function displayReminders() {
 
 $(".saveBtn").on("click", function(event) {
     event.preventDefault();
-    var saveIndex = $(this).siblings(".description")
+    event.target.Id
+    siblings(".description")
     saveReminders();
     displayReminders();
 })
-
-
-
 
 
 var timeSlot = $('.hour');
