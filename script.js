@@ -82,22 +82,23 @@ for (var i = 0; i < day.length; i++) {
     var addRow = $(`
     <div id="hour-${day[i].value}" class="row time-block">
       <div class="col-md-1 hour">
-        ${day[i].hour} ${day[i].abbrieviation} 
+        ${day[i].hour} ${day[i].abbrieviation}
       </div>
       <textarea class="col-md-10 description"  id ="reminder" name = "entry">
       </textarea>
       <button class="btn saveBtn col-md-1"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
     </div>
+    
+
     `);
 
-    // It then adds this new row div.
+    // It then adds this new row div
     containerDiv.append(addRow);
 }
 
 
-var inputVal = document.getElementById("reminder").value;
-
 function saveReminders() {
+    var inputVal = document.getElementById("reminder").value;
     localStorage.setItem("input", inputVal);
 }
 
@@ -122,14 +123,7 @@ $(".saveBtn").on("click", function(event) {
 
 
 
-
-
-
-
 var timeSlot = $('.hour');
-
-
-
 
 $(timeSlot).each(function (index) {
     var date = new Date;
