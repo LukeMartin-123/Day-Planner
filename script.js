@@ -95,45 +95,44 @@ for (var i = 0; i < day.length; i++) {
 }
 
 
-let reminderArray = [];
 
 
-// Add Event Listener to Save Button
-// When the event runs, you grab the content from the textarea and save that into localstorage with a unique key that relates to the time block
+function saveReminders() {
+    localStorage.setItem("day", JSON.stringify(day));
+}
 
-var input = document.getElementsByID('reminder');
-document.getElementsByClassName("btn").addEventListener("click", function(){ 
-localStorage.setItem(entry, input.val());
-};
+function getReminders() {
+    var storedInfo = JSON.parse(localStorage.getItem("day"));
+    if (
+        storedInfo = 
+    )
+}
 
-var storedValue = localStorage.getItem("entry");
-
-
-       
-
-
-// // When the page loads, you would need to look through the localstorage content for anything stored
-// localStorage.getItem("reminderArray")
-
+function displayReminders() {
+    day.forEach(function () {
+        $(this.hour).val(thishour.day);
+    })
+}
 
 
-// // And if there is something stored, you would set the the value of the textarea equal to what’s in localstorage
-// function showData() {
-//     inputArea.innerHTML = JSON.parse(localStorage.getItem('inputArray'))
-//         if (
-//             // reminder contains data
-//         )
+$(".saveBtn").on("click", function(event) {
+    event.preventDefault();
+    var saveIndex = $(this).siblings(".description")
+    saveReminders();
+    displayReminders();
+})
 
-//         }
+
+
+
+
 
 
 
 
 var timeSlot = $('.hour');
 
-// $( timeSlot ).each(function( index ) {
-//     console.log( index + $( this ).text() );
-//   });
+
 
 
 $(timeSlot).each(function (index) {
