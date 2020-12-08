@@ -84,7 +84,7 @@ for (var i = 0; i < day.length; i++) {
       <div class="col-md-1 hour">
         ${day[i].hour} ${day[i].abbrieviation} 
       </div>
-      <textarea class="col-md-10 description" name = "entry" id ="reminder">
+      <textarea class="col-md-10 description"  id ="reminder" name = "entry">
       </textarea>
       <button class="btn saveBtn col-md-1"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
     </div>
@@ -95,22 +95,18 @@ for (var i = 0; i < day.length; i++) {
 }
 
 
-
+var inputVal = document.getElementById("reminder").value;
 
 function saveReminders() {
-    localStorage.setItem("day", JSON.stringify(day));
+    localStorage.setItem("input", inputVal);
 }
 
 function getReminders() {
-    var storedInfo = JSON.parse(localStorage.getItem("day"));
-    if (
-        storedInfo = 
-    )
-}
+    localStorage.getItem('value')
+    }
 
 function displayReminders() {
-    day.forEach(function () {
-        $(this.hour).val(thishour.day);
+    forEach(function () {
     })
 }
 
