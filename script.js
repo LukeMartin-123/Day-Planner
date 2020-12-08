@@ -84,7 +84,7 @@ for (var i = 0; i < day.length; i++) {
       <div class="col-md-1 hour">
         ${day[i].hour} ${day[i].abbrieviation} 
       </div>
-      <textarea class="col-md-10 description">
+      <textarea class="col-md-10 description" name = "entry" id ="reminder">
       </textarea>
       <button class="btn saveBtn col-md-1"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
     </div>
@@ -94,28 +94,37 @@ for (var i = 0; i < day.length; i++) {
     containerDiv.append(addRow);
 }
 
-const inputArea = $('textarea');
+
 let reminderArray = [];
 
 
 // Add Event Listener to Save Button
 // When the event runs, you grab the content from the textarea and save that into localstorage with a unique key that relates to the time block
-document.getElementsByClassName('btn').addeventListener("click", localStorage.setItem("reminderArray", JSON.stringify))
+
+var input = document.getElementsByID('reminder');
+document.getElementsByClassName("btn").addEventListener("click", function(){ 
+localStorage.setItem(entry, input.val());
+};
+
+var storedValue = localStorage.getItem("entry");
+
+
        
 
-// When the page loads, you would need to look through the localstorage content for anything stored
- inputArea.innerHTML = localStorage.getItem("reminderArray")
 
-}
+// // When the page loads, you would need to look through the localstorage content for anything stored
+// localStorage.getItem("reminderArray")
 
-// And if there is something stored, you would set the the value of the textarea equal to what’s in localstorage
-function showData() {
-    var reminder = JSON.parse(localStorage.getItem('inputArray'))
-        if (
-            // reminder contains data
-        )
 
-        }
+
+// // And if there is something stored, you would set the the value of the textarea equal to what’s in localstorage
+// function showData() {
+//     inputArea.innerHTML = JSON.parse(localStorage.getItem('inputArray'))
+//         if (
+//             // reminder contains data
+//         )
+
+//         }
 
 
 
